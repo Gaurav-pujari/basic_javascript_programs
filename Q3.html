@@ -1,0 +1,31 @@
+
+<html>
+<head>
+
+
+    <title>Gender Selection</title>
+</head>
+<body>
+    <form>
+        <label>Male</label>
+        <input type="radio" name="gender" value="Male">
+        <label>Female</label>
+        <input type="radio" name="gender" value="Female">
+    </form>
+    <p id="result"></p>
+
+<script type="text/javascript">
+    function radios(){
+        let queryselector=document.querySelector('input[name="gender"]:checked').value;
+        document.getElementById("result").innerHTML="Shyam is"+queryselector;
+
+    }
+    let genderselection=document.getElementsByName("gender");
+
+    genderselection.forEach(radio =>{
+document.addEventListener("click",radios);
+    });
+
+</script>
+</body>
+</html>

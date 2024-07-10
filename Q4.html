@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Checkbox Event Handling</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="name" value="Gaurav"> Gaurav<br>
+        <input type="checkbox" name="name" value="Rohan"> Rohan<br>
+        <input type="checkbox" name="name" value="Soham"> Soham<br>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function allwords() {
+            let checkboxes = document.querySelectorAll('input[name="name"]:checked');
+            let selectedNames = [];
+            checkboxes.forEach((checkbox) => {
+                selectedNames.push(checkbox.value);
+            });
+            document.getElementById("result").innerHTML = "Smart person is " + selectedNames;
+        }
+
+        let selectors = document.querySelectorAll('input[name="name"]');
+        selectors.forEach((checkbox) => {
+            checkbox.addEventListener("click", allwords);
+        });
+    </script>
+</body>
+</html>
